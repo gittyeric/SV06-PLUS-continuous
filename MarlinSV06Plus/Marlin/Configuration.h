@@ -69,7 +69,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "SV06 PLUS" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "SC06 PLUS" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 #define MACVERSION      STRING_CONFIG_H_AUTHOR
 #define SOFTVERSION     SHORT_BUILD_VERSION
@@ -1748,7 +1748,8 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+// Slow down Y axis homing to make ramming less damaging
+#define HOMING_FEEDRATE_MM_M { (50*60), (15*60), (4*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
